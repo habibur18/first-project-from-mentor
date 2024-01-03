@@ -1,0 +1,21 @@
+.underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80%;
+  height: 2px;
+  bottom: -11px;
+  left: 10%;
+  background-color: #ff0065;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.underline:hover::before {
+  transform: scaleX(1);
+}
