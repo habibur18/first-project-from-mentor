@@ -9,6 +9,7 @@ import Register from "./loginRegister/Register";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [currentComponent, setCurrentComponent] = useState(null);
 
   const navLinks = [
     { name: "Home", link: "/" },
@@ -27,6 +28,13 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  const openModal = (component) => {
+    setCurrentComponent(component);
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
   useEffect(() => {
     const handleOutsideClick = (event) => {
       const sidebar = document.getElementById("sidebar");
@@ -72,7 +80,13 @@ const Navbar = () => {
             <ul className="flex gap-3">
               <li>
                 <a
-                  href="/login"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openModal(
+                      <Login closeModal={closeModal} openModal={openModal} />
+                    );
+                  }}
+                  href=""
                   className="bg-[#ff0065] px-6 py-2 text-[white] rounded-md"
                 >
                   Login
@@ -80,18 +94,21 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="/login"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openModal(
+                      <Register closeModal={closeModal} openModal={openModal} />
+                    );
+                  }}
+                  href="/"
                   className="bg-[#ff0065] px-6 py-2 text-white rounded-md"
                 >
                   Register
                 </a>
               </li>
             </ul>
-            <Modal isOpen={isOpen}>
-              <Login />
-            </Modal>
-            <Modal isOpen={isOpen}>
-              <Register />
+            <Modal open={isOpen} closeModal={closeModal}>
+              {currentComponent}
             </Modal>
           </div>
           <div className="xl:hidden pr-5">

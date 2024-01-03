@@ -6,8 +6,6 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="my-10"></div>
-      <Login />
     </>
   );
 }
