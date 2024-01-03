@@ -131,7 +131,9 @@ const Login = ({ closeModal, openModal }) => {
               <a
                 onClick={(e) => {
                   e.preventDefault();
-                  openModal(<Register />);
+                  openModal(
+                    <Register closeModal={closeModal} openModal={openModal} />
+                  );
                 }}
                 href="#"
                 className="text-[#ff0065] hover:text-sky-500 transition-colors"

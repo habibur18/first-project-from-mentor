@@ -97,7 +97,7 @@ const Navbar = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     openModal(
-                      <Register closeModal={closeModal} openModal={openModal} />
+                      <Login closeModal={closeModal} openModal={openModal} />
                     );
                   }}
                   href="/"

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import Login from "./Login";
 
-const Register = ({ closeModal, openModal }) => {
+const Register = ({ closeModal, openModal, setIsOpen }) => {
   const [selectedGender, setSelectedGender] = useState("male");
   const modalRef = useRef(null);
 
@@ -199,7 +199,9 @@ const Register = ({ closeModal, openModal }) => {
               <a
                 onClick={(e) => {
                   e.preventDefault();
-                  openModal(<Login />);
+                  openModal(
+                    <Login closeModal={closeModal} openModal={openModal} />
+                  );
                 }}
                 href="#"
                 className="text-[#ff0065] hover:text-sky-500 transition-colors"
