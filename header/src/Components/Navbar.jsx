@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#212529]">
-      <div className="flex items-center justify-between lg:px-5 xl:px-18 2xl:px-40  py-5 px-2">
+      <div className="flex items-center justify-between lg:px-5 xl:px-18 2xl:px-26  py-5 px-2">
         <div className="flex items-center gap-3">
           <img
             src="https://pxflix.com/wp-content/uploads/2023/11/logo1-e1700852046571.png.webp"
