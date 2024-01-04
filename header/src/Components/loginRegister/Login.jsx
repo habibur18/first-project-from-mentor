@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
 import Register from "./Register";
 const Login = ({ closeModal, openModal }) => {
   const modalRef = useRef(null);
@@ -25,11 +23,10 @@ const Login = ({ closeModal, openModal }) => {
     >
       <div className="flex flex-col justify-center items-center max-w-[600px]  p-2 py-10">
         <div className="p-2 relative">
-          <FontAwesomeIcon
-            icon={faX}
+          <i
+            className="fa-solid fa-x text-white text-3xl absolute top-0 right-0 cursor-pointer close-button"
             onClick={() => closeModal()}
-            className="text-white absolute top-0 right-0 cursor-pointer close-button"
-          />
+          ></i>
           <div className="flex items-center justify-center gap-3">
             <img
               src="https://pxflix.com/wp-content/uploads/2023/11/logo1-e1700852046571.png.webp"
@@ -129,8 +126,7 @@ const Login = ({ closeModal, openModal }) => {
             <p className="text-[#717986]">
               Don't have an account?{" "}
               <a
-                onClick={(e) => {
-                  e.preventDefault();
+                onClick={() => {
                   openModal(
                     <Register closeModal={closeModal} openModal={openModal} />
                   );

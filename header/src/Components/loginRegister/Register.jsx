@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
 import Login from "./Login";
 
 const Register = ({ closeModal, openModal, setIsOpen }) => {
@@ -43,11 +41,15 @@ const Register = ({ closeModal, openModal, setIsOpen }) => {
       className="w-full  bg-[#262a32] flex justify-center flex-col items-center rounded-lg px-4 py-10"
     >
       <div className="relative">
-        <FontAwesomeIcon
+        {/* <FontAwesomeIcon
           icon={faX}
           onClick={() => closeModal()}
           className="text-white absolute top-0 right-0 cursor-pointer close-button"
-        />
+        /> */}
+        <i
+          className="fa-solid fa-x text-white text-3xl absolute top-0 right-0 cursor-pointer close-button"
+          onClick={() => closeModal()}
+        ></i>
         <div className="flex items-center justify-center">
           <img
             src="https://pxflix.com/wp-content/uploads/2023/11/logo1-e1700852046571.png.webp"

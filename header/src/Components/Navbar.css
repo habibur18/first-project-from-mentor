@@ -1,9 +1,9 @@
-.underline {
+.underline-text {
   position: relative;
   text-decoration: none;
 }
 
-.underline::before {
+.underline-text::before {
   content: "";
   position: absolute;
   display: block;
@@ -16,6 +16,6 @@
   transition: transform 0.3s ease;
 }
 
-.underline:hover::before {
+.underline-text:hover::before {
   transform: scaleX(1);
 }

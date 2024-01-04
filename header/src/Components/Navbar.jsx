@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 // import styles from "./Navbar.css
 import "./Navbar.css";
 import Modal from "./Modal/Modal";
@@ -69,7 +67,7 @@ const Navbar = () => {
               <li key={link.name}>
                 <a
                   href={link.link}
-                  className="underline text-2xl text-white hover:text-[#ff0065] duration-500"
+                  className="underline-text text-2xl text-white hover:text-[#ff0065] duration-500"
                 >
                   {link.name}
                 </a>
@@ -97,7 +95,7 @@ const Navbar = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     openModal(
-                      <Login closeModal={closeModal} openModal={openModal} />
+                      <Register closeModal={closeModal} openModal={openModal} />
                     );
                   }}
                   href="/"
@@ -114,17 +112,25 @@ const Navbar = () => {
           <div className="xl:hidden pr-5">
             {/* menu icon */}
             {menuOpen ? (
-              <FontAwesomeIcon
-                onClick={(e) => handleMenuClick(e)}
-                icon={faX}
-                className="text-white text-3xl"
-              />
+              // <FontAwesomeIcon
+              //   onClick={(e) => handleMenuClick(e)}
+              //   icon={faX}
+              //   className="text-white text-3xl"
+              // />
+              <i
+                className="fa-solid fa-x text-white text-3xl"
+                onClick={handleMenuClick}
+              ></i>
             ) : (
-              <FontAwesomeIcon
-                onClick={(e) => handleMenuClick(e)}
-                icon={faBars}
-                className="text-white text-3xl"
-              />
+              // <FontAwesomeIcon
+              //   onClick={(e) => handleMenuClick(e)}
+              //   icon={faBars}
+              //   className="text-white text-3xl"
+              // />
+              <i
+                className="fa-solid fa-bars text-white text-3xl"
+                onClick={handleMenuClick}
+              ></i>
             )}
           </div>
         </div>
@@ -143,11 +149,15 @@ const Navbar = () => {
             menuOpen ? "transform translate-x-0" : "transform -translate-x-full"
           }`}
         >
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             onClick={handleMenuClick}
             icon={faX}
             className="cursor-pointer bg-[#ff0065] rounded-full px-3 py-3  text-white absolute top-5 -right-3"
-          />
+          /> */}
+          <i
+            className="fa-solid fa-x text-white my-2 hover:bg-[#D32F8F] duration-300 absolute top-0 right-0 cursor-pointer px-3 py-3 bg-[#ff0065] rounded-full"
+            onClick={handleMenuClick}
+          ></i>
           <div className="p-8 my-12 lg:p-8">
             <ul className="flex flex-col gap-4 ">
               {navLinks.map((link) => (
